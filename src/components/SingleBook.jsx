@@ -1,5 +1,6 @@
 import { Col, Card, Badge } from "react-bootstrap";
 import { Component } from "react";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
@@ -64,6 +65,11 @@ class SingleBook extends Component {
             <Badge>{this.props.book.category}</Badge>
           </Card.Body>
         </Card>
+        {this.state.selected && (
+          <div>
+            <CommentArea idLibro={this.props.book.asin} />
+          </div>
+        )}
       </Col>
     );
   }
