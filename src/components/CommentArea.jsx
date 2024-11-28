@@ -1,6 +1,8 @@
 import { Component } from "react";
 import CommentList from "./CommentList";
 
+import AddComment from "./AddComment";
+
 class CommentArea extends Component {
   state = {
     lista_commenti: [],
@@ -38,6 +40,7 @@ class CommentArea extends Component {
         {this.state.lista_commenti.length > 0 && (
           <CommentList listaCommenti={this.state.lista_commenti} />
         )}
+        <AddComment idLibro={this.props.idLibro} />
       </div>
     );
   }

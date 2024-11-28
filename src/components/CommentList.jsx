@@ -13,7 +13,12 @@ class CommentList extends Component {
       <div>
         <ul>
           {this.state.listaCommenti.map((element) => (
-            <SingleComment key={element._id} comment={element.comment} />
+            <SingleComment
+              key={element._id}
+              comment={element.comment}
+              rate={element.rate}
+              author={element.author}
+            />
           ))}
         </ul>
       </div>

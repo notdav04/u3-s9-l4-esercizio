@@ -15,7 +15,7 @@ class SingleBook extends Component {
   };
   render() {
     return (
-      <Col md={3} onClick={this.handleClick}>
+      <Col md={3}>
         {/* {!this.state.selected && (
           <Card className="mb-4">
             <Card.Img
@@ -47,6 +47,7 @@ class SingleBook extends Component {
 
         <Card
           className="mb-4 "
+          onClick={this.handleClick}
           {...(this.state.selected && {
             style: {
               border: "2px solid blue",

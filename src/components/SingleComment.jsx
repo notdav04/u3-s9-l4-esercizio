@@ -7,11 +7,11 @@ class SingleComment extends Component {
   }
   render() {
     return (
-      <li>
-        <p>{this.props.comment}</p>
-        {/* <small>
-          Voto: {comment.rate}- autore: {comment.author}
-        </small> */}
+      <li className="mb-3">
+        <p className="mb-1">{this.props.comment}</p>
+        <small>
+          Voto: {this.props.rate}- autore: {this.props.author}
+        </small>
       </li>
     );
   }
