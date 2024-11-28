@@ -10,7 +10,7 @@ class CommentArea extends Component {
     const url =
       "https://striveschool-api.herokuapp.com/api/comments/" +
       this.state.idLibro;
-    console.log(url);
+    // console.log(url);
     try {
       const response = await fetch(url, {
         headers: {
@@ -20,8 +20,9 @@ class CommentArea extends Component {
       });
       if (response.ok) {
         const responseObj = await response.json();
-        console.log(responseObj);
-        this.setState({ lista_commenti: responseObj });
+        // console.log("responseObj: ", responseObj);
+        this.setState({ lista_commenti: responseObj }, () => {});
+        // console.log("state lista commenti: ", this.state.lista_commenti);
       }
     } catch (error) {
       console.log(error);
@@ -34,7 +35,9 @@ class CommentArea extends Component {
     return (
       <div>
         <h3>Commenti</h3>
-        <CommentList listaCommenti={this.state.lista_commenti} />
+        {this.state.lista_commenti.length > 0 && (
+          <CommentList listaCommenti={this.state.lista_commenti} />
+        )}
       </div>
     );
   }
